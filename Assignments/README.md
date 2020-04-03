@@ -18,7 +18,7 @@ LJMU SoE has developed a TamperMonkey Userscript to add a second route for creat
 
 > This Userscript is an unofficial add-on to Canvas’ it is not endorsed by Canvas. If it works for you, great, but don’t phone Canvas Support if it fails. 
 
-## Creating a spreadsheet for the SoE TamperMonkey Userscript Canvas uploader 
+## Creating the spreadsheet
 
 The first row of each spreadsheet is the header row. It signifies the meaning of the values in each column beneath by using certain key terms. The columns can be in any order, so long as the first row (the header row) correctly identifies their contents. Further to this, certain columns are grouped together using an identifier appended to the end of their header key term. This will be easier to understand once you see examples. 
 
@@ -51,7 +51,7 @@ This can be done by simply leaving a single empty row in the spreadsheet, then u
 
 First you need to export your spreadsheet in a tab delimited format. From Excel click on "*Save as...*" and change the output file format to "*Text (tab delimited) \*.txt*" . Save **a copy** of the file in that format. 
 
-Next, in Canvas, from "*Outcomes*" page click on the "*Manage rubrics*" button. If the TamperMonkey Userscript is active in your web browser you should see an upload box, like the one below. From your computer, drag and drop the tab delimited file into the dashed box. This will cause the Userscript to immediately upload the file and analyse it. 
+Next, in Canvas, from the "*Outcomes*" page (left sidebar links) click on the "*Manage rubrics*" button. If the TamperMonkey Userscript is active in your web browser you should see an upload box, like the one below. From your computer, drag and drop the tab delimited file into the dashed box. This will cause the Userscript to immediately upload the file and analyse it. 
 
 ![Basic spreadsheet](./docs/ss03.jpg)
 
