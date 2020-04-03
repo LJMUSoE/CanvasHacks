@@ -80,8 +80,8 @@ The uploader may give the following errors:
 
 Listed below are some example rubrics, in both Excel and TSV format.
 
-* Basic test rubric, used to debug the script #1: [Excel](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2001.xlsx) / [Tab delimited](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2001.xlsx)
-* Basic test rubric, used to debug the script #2: [Excel](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2002.xlsx) / [Tab delimited](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2002.xlsx)
-* Example rubric #1: [Excel](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2003.xlsx) / [Tab delimited](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2003.xlsx)
-* Example rubric #2: [Excel](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2004.xlsx) / [Tab delimited](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2004.xlsx)
+* Basic test rubric, used to debug the script #1: [Excel](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2001.xlsx) / [Tab delimited](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2001.txt)
+* Basic test rubric, used to debug the script #2: [Excel](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2002.xlsx) / [Tab delimited](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2002.txt)
+* Example rubric #1: [Excel](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2003.xlsx) / [Tab delimited](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2003.txt)
+* Example rubric #2: [Excel](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2004.xlsx) / [Tab delimited](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/docs/Rubric%20LJMU%2004.txt)
 
