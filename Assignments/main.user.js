@@ -6,6 +6,7 @@
 // @name         LJMU SoE Canvas Enhancements.
 // @namespace    http://ljmu.ac.uk/
 // @version      2020-04-01
+// @updateURL    https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/main.user.js
 // @description  Makes various ease-of-use enhancements to Canvas VLE.
 // @author       S.E.Morris
 // @match        http*://canvas.ljmu.ac.uk/courses/*/assignments/*/edit*
