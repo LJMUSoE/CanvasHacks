@@ -5,4 +5,4 @@ uploading a rubric from a spreadsheet.
 
 ## Installation
 1. Install [Tampermonkey](http://tamperMonkey.net/) for your browser (tested with Chrome.)
-2. Add the [main.js](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/main.js) script to TamperMonkey.
+2. Add the [main.user.js](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/main.user.js) script to TamperMonkey.
