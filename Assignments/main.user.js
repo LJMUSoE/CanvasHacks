@@ -3,7 +3,7 @@
 // https://www.tampermonkey.net/documentation.php?version=4.9&ext=dhdg&updated=true
 // http://code.jquery.com/jquery-latest.js
 //
-// @name         LJMU SoE Canvas Enhancements.
+// @name         LJMU SoE Canvas Enhancements: Assignments
 // @namespace    http://ljmu.ac.uk/
 // @version      2020-04-01
 // @updateURL    https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/main.user.js
