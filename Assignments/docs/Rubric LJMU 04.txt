@@ -1,0 +1,13 @@
+Criterion title	Criterion description	Rating title SA	Rating score SA	Rating title A	Rating score A	Rating title D	Rating score D	Rating title SD	Rating score SD
+Appearance	Poster is well organised and easy to follow.	Strongly Agree	5	Agree	3	Disagree	2	Strongly Disagree	0
+Appearance	The poster is appealing to look at.	Strongly Agree	5	Agree	3	Disagree	2	Strongly Disagree	0
+Content	Content is clear and easy to understand.	Strongly Agree	5	Agree	3	Disagree	2	Strongly Disagree	0
+Content	Title is focused on the main issue or topic for investigation.	Strongly Agree	5	Agree	3	Disagree	2	Strongly Disagree	0
+Content	Illustrates the rationale and background of the project.	Strongly Agree	5	Agree	3	Disagree	2	Strongly Disagree	0
+Content	"Research aim/s, objectives and/or questions are stated clearly."	Strongly Agree	5	Agree	3	Disagree	2	Strongly Disagree	0
+Content	Summarises important points/ideas from relevant literature (eg. with citations from scholarly sources).	Strongly Agree	5	Agree	3	Disagree	2	Strongly Disagree	0
+Content	Adequate details about methods provided to collect data for a field-based project or themes to consider for a library-based study.	Strongly Agree	5	Agree	3	Disagree	2	Strongly Disagree	0
+Content	Adequate details about sampling participants (for a field-based project) or selection criteria (for library-based study).	Strongly Agree	5	Agree	3	Disagree	2	Strongly Disagree	0
+Content	Poster is free of unnecessary or irrelevant details.	Strongly Agree	5	Agree	3	Disagree	2	Strongly Disagree	0
+Overall	Appropriate use of citations and proper referencing format applied.	Strongly Agree	5	Agree	3	Disagree	2	Strongly Disagree	0
+Overall	This is a really well thought out poster.	Strongly Agree	5	Agree	3	Disagree	2	Strongly Disagree	0
