@@ -2,8 +2,12 @@
 
 This project contains various enhancement to the Canvas VLE / LMS, relating to setting up assignments and rubrics. This document describes a process allowing Canvas users to avoid its in-built rubric design tool by designing their rubrics using spreadsheet software such as Microsoft Excel. 
 
+Enhancement included in this Userscript:
+* When creating an assignment, a tool is included to simplify adding appropriate file extensions when using "Restrict upload file types".
+* In the *Rubric manager*, a tool is included to allow rubrics to be creating using spreadsheets.
+
 ## Installation
-1. Install [Tampermonkey](http://tamperMonkey.net/) for your browser (tested with Chrome.)
+1. Install [TamperMonkey](http://tamperMonkey.net/) for your browser (tested with Chrome.)
 2. Add the [main.user.js](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/main.user.js) script to TamperMonkey.
 
 ## Introduction
