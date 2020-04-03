@@ -74,4 +74,14 @@ The uploader may give the following errors:
 * **Cannot find authenticity token in cookies** – the script couldn’t extract the cookie Canvas uses to identify the current logged-in user from the page’s available cookies. 
 * **Failed. Canvas rejected the rubric for some reason** – Canvas rejected the rubric when the Userscript tried to submit it to Canvas. This Userscript is an unofficial add-on to Canvas, and it is possible that updates to the rubric system may invalidate the way it works. 
 
-> Note, if you fail to use a consistent group identifier across ratings header columns, the script will think it has two groups: one defining a title but missing a score, and the other defining a score but missing a title. An error message reporting **Missing rating title**, therefore, might actually be cause by an erroneous score header. 
+> Note, if you fail to use a consistent group identifier across ratings header columns, the script will think it has two groups: one defining a title but missing a score, and the other defining a score but missing a title. An error message reporting **Missing rating title**, therefore, might actually be cause by an erroneous score header.
+
+## Example documents
+
+Listed below are some example rubrics, in both Excel and TSV format.
+
+* Basic test rubric, used to debug the script #1: [Excel](./docs/Rubric%20LJMU%2001.xlsx) / [Tab delimited](./docs/Rubric%20LJMU%2001.xlsx)
+* Basic test rubric, used to debug the script #2: [Excel](./docs/Rubric%20LJMU%2002.xlsx) / [Tab delimited](./docs/Rubric%20LJMU%2002.xlsx)
+* Example rubric #1: [Excel](./docs/Rubric%20LJMU%2003.xlsx) / [Tab delimited](./docs/Rubric%20LJMU%2003.xlsx)
+* Example rubric #2: [Excel](./docs/Rubric%20LJMU%2004.xlsx) / [Tab delimited](./docs/Rubric%20LJMU%2004.xlsx)
+
