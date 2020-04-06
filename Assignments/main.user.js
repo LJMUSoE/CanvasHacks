@@ -31,6 +31,9 @@
         if(window.location.toString().match(subpages[k])) { page = k; }
     }
 
+    // Version
+    const version = '2020-04-01';
+
     // Inject CSS
     $("<style>").prop("type", "text/css").html(
         '.tm_Injection {' +
@@ -40,7 +43,7 @@
         '  box-shadow: 0px 5px 5px #ccc;  border-radius: 10px; ' +
         '}' +
         '.tm_Injection::before {' +
-        "  content: '-- Cando: Unofficial Canvas Userscript (2020-04-01) --'; " +
+        "  content: '-- Cando: Unofficial Canvas Userscript -- version="+version+" --'; " +
         '  padding: 2px 5px;  font-size: 9pt;  color: White;  background-color: #cccc66; ' +
         '}'
     ).appendTo("head");
@@ -335,6 +338,7 @@
                                         });
                                     }
                                     $('button',$i).click(function(ev) {
+                                        $(this).prop('disabled',true);
                                         const v = $('input',$i).val().trim();
                                         if(v && v.length > 2) {
                                             out.title = v;
