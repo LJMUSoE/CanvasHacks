@@ -7,12 +7,12 @@ Enhancements included in this Userscript:
 * In the *Rubric manager*, a tool is included to allow rubrics to be creating using spreadsheets.
 
 ## Installation
-1. Install [TamperMonkey](http://tamperMonkey.net/) for your browser (tested with Chrome.)
+1. Install the [TamperMonkey](http://tamperMonkey.net/) extension for your browser, if you haven't already (tested with Chrome.)
 2. Add the [main.user.js](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Assignments/main.user.js) script to TamperMonkey.
 
 ## Introduction
 
-TamperMonkey is a popular Google Chrome browser extension that lets users augment existing web pages to (unofficially) change or add features. These augmentations are known as Userscripts – lightweight chunks of software that the user can add to TamperMonkey, designed to trigger when the browser visits specific web pages. Once triggered, a Userscript has broad access to add its own functionality into the page. 
+TamperMonkey is a popular Google Chrome browser extension that lets users augment existing web pages to (unofficially) change or add features. These augmentations are known as Userscripts. 
 
 LJMU SoE has developed a TamperMonkey Userscript to add a second route for creating rubrics, alongside Canvas’ official rubric builder. This alternative route is more forgiving about the structure of the rubric, specifically the order the ratings are defined. 
 
