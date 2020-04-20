@@ -3,20 +3,21 @@
 This project contains various enhancement to the Canvas VLE / LMS, relating to working with the page editor.
 
 Enhancements included in this Userscript:
-* When in the HTML view, the contents of the page can be beautified so that the structure of the HTML can be easily send.
-* A simple UI is provided to add [FlexBox Grid](https://community.canvaslms.com/thread/2767) elements into the HTML view. [FlexBox Grid](http://flexboxgrid.com/) is a simple set of page styles that create columns on a page, in a way that is kind to Accessibility software and can adapt to narrow display sizes.
+* When in the HTML view, the contents of the page can be beautified so that the structure of the HTML can be easily seen.
+* A simple UI is provided to add Web standards-compliant columns and other horizontal content, without using tables. Avoiding tables allows the horizontal page content to reorganise itself to fit narrow page sizes, while also making the page interact better with accessibility software.
+* A simple UI is provided to add parapraphs with pinline borders.
 
 ## Installation
-1. Install [TamperMonkey](http://tamperMonkey.net/) for your browser (tested with Chrome.)
+1. Install the [TamperMonkey](http://tamperMonkey.net/) extension for your browser, if you haven't already (tested with Chrome.)
 2. Add the [main.user.js](https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Editor/main.user.js) script to TamperMonkey.
 
 ## Introduction
 
-TamperMonkey is a popular Google Chrome browser extension that lets users augment existing web pages to (unofficially) change or add features. These augmentations are known as Userscripts – lightweight chunks of software that the user can add to TamperMonkey, designed to trigger when the browser visits specific web pages. Once triggered, a Userscript has broad access to add its own functionality into the page. 
+TamperMonkey is a popular Google Chrome browser extension that lets users augment existing web pages to (unofficially) change or add features. These augmentations are known as 'Userscripts'. 
 
-LJMU SoE has developed a TamperMonkey Userscript to help create pages with sophisticated styling. Users often resort to *tables* to do non-paragraph layouts in Canvas Pages, but tables are inflexible and can be confusing to accessibility software. On a narrow display (such as a smart phone) a table cannot be broken apart and re-flowed to fit the dimensions of the screen. Screen readers need to guess the order in which the cells in a table should be read, which may not correspond with the way the content flows between cells visually. The solution to these problems is to define content using regular non-table HTML, but tell the browser to group elements horizontally when the display width permits it, and vertically when it doesn't. This not only allows the browser to re-structure the page to fit the available space, but also guarantees the document's structure will better match its reading order (which aids screen readers.) 
+LJMU SoE has developed a TamperMonkey Userscript to help create pages with sophisticated styling. Users often resort to *tables* to do sophisticated layouts in Canvas Pages, but using tables merely for layout has long been discouraged on the Web. On a narrow display (such as a smart phone) a table cannot be broken apart, to be reflowed to fit within the dimensions of the screen. Also, using tables for layout can obfuscate the natural reading order of elements on the page, causing issues with accessibility software such as screen readers. Since the early 2000s Web standards have provided technologies to create sophisticated layouts that can adapt to different page widths, and also maintain an unambiguous reading order. 
 
-Canvas already employs a solution for re-flowing horizontal content, called [FlexBox Grid.](https://community.canvaslms.com/thread/2767) FlexBox Grid is available for use on Pages, but to apply it to a page the author has to have a solid understanding of Web style languages (Cascading Style Sheets.) This Userscript adds a few simple controls **to the HTML editor** in Canvas Pages (note: not the Rich Text Editor) that helps add such content, without the author needing any understanding of Web stylesheets.
+Using these Web standards, Canvas includes a simple mechanism to include horizontal content -- columns -- called [FlexBox Grid.](https://community.canvaslms.com/thread/2767) FlexBox Grid is available for use on Pages, but to apply it to a page the author has to have a solid understanding of Web style languages (Cascading Style Sheets.) This Userscript adds a few simple controls **to the HTML editor** in Canvas Pages (note: not the Rich Text Editor) that helps add such content, without a knowledge of Web standards.
 
 > This Userscript is an unofficial add-on to Canvas; **it is not endorsed by Canvas**. If it works for you, great, but don’t phone Canvas Support if it fails. 
 
