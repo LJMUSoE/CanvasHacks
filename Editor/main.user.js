@@ -5,7 +5,7 @@
 //
 // @name         LJMU SoE Canvas Enhancements: Editor
 // @namespace    http://ljmu.ac.uk/
-// @version      2020-04-09
+// @version      2020-04-20
 // @updateURL    https://raw.githubusercontent.com/LJMUSoE/CanvasHacks/master/Editor/main.user.js
 // @description  Makes various ease-of-use enhancements to Canvas VLE.
 // @author       S.E.Morris
@@ -67,35 +67,66 @@
                 "6col" : {c:"col-md-2  col-sm-4  col-xs-6"  , v:"Six columns"   , i:6}
             };
             const columnAlign = {
-                "Ccol" : {c:"center-xs" , v:"Align centre [--ABC--]"} ,
+                "Ccol" : {c:"center-xs"  , v:"Align centre [--ABC--]"} ,
                 "Rcol" : {c:"end-xs"     , v:"Align right [--ABC]"} ,
                 "Lcol" : {c:"start-xs"   , v:"Align left [ABC--]"} ,
                 "Acol" : {c:"around-xs"  , v:"Space around [--A--B--C--]"} ,
                 "Bcol" : {c:"between-xs" , v:"Space between [A--B--C]"}
             };
+            const borderStyle = {
+                "Full" : {c:"border-trbl" , v:"All sides" } ,
+                "TB"   : {c:"border-tb"   , v:"Top/bottom only" } ,
+                "RL"   : {c:"border-rl"   , v:"Left/right only" } ,
+                "T"    : {c:"border-t"    , v:"Top only" } ,
+                "R"    : {c:"border-r"    , v:"Right only" } ,
+                "B"    : {c:"border-b"    , v:"Bottom only" } ,
+                "L"    : {c:"border-l"    , v:"Left only" }
+            }
 
             const $c = $(
-                '<div class="tm_Injection" style="display:None;">' +
-                '  <div style="margin-top:0.5em;">' +
-                '    <label for="tm_ColumnNumber">Columns: </label><select id="tm_ColumnNumber"></select>&nbsp;&nbsp;' +
-                '    <label for="tm_ColumnAlign">Space: </label><select id="tm_ColumnAlign"></select>&nbsp;&nbsp;' +
-                '    <a id="tm_ColumnAdd" href="#">Add columns</a>' +
-                '  </div>' +
-                '  <hr/>' +
-                '  <div style="margin-top:0.5em;">' +
-                '    <a id="tm_Beautify" href="#">Beautify HTML</a>' +
+                '<div class="tm_Injection" style="display:None; position:Relative;">' +
+                '  <a id="tm_Expander" style="position:Absolute; top:0.5px; right:2em;" href="#">Show/hide</a>' +
+                '  <div id="tm_ExpanderTarget" style="display:None; max-height:500px; overflow-y:Auto;">' +
+                '    <div style="margin-top:0.5em;">' +
+                '      <fieldset>' +
+                '        <legend>Columns</legend>'+
+                '        <label for="tm_ColumnNumber">Number: </label><select id="tm_ColumnNumber"></select>&nbsp;&nbsp;' +
+                '        <label for="tm_ColumnAlign">Spacing: </label><select id="tm_ColumnAlign"></select>&nbsp;&nbsp;' +
+                '        <a id="tm_ColumnAdd" href="#">Add columns</a>' +
+                '      </fieldset>'+
+                '    </div>' +
+                '    <div style="margin-top:0.5em;">' +
+                '      <fieldset>'+
+                '        <legend>Borders</legend>' +
+                '        <label for="tm_BorderStyle"Sides: </label><select id="tm_BorderStyle"></select>&nbsp;&nbsp;'+
+                '        <a id="tm_BorderAdd" href="#">Add bordered ale</a>' +
+                '      </fieldset>'+
+                '    </div>'+
+                '    <div style="margin-top:0.5em;">' +
+                '      <fieldset>'+
+                '        <legend>HTML tidy-up</legend>'+
+                '        <a id="tm_Beautify" href="#">Beautify HTML</a>' +
+                '      </fieldset>'+
+                '    </div>' +
                 '  </div>' +
                 '</div>'
             );
+            $('#tm_Expander',$c).click(function(ev) {
+                $('#tm_ExpanderTarget',$c).toggle();
+                return false;
+            });
             for(let k in columnNumber) {
                 $('select#tm_ColumnNumber',$c).append('<option name="'+k+'">'+columnNumber[k].v+'</option>');
             }
             for(let k in columnAlign) {
                 $('select#tm_ColumnAlign',$c).append('<option name="'+k+'">'+columnAlign[k].v+'</option>');
             }
+            for(let k in borderStyle) {
+                $('select#tm_BorderStyle',$c).append('<option name="'+k+'">'+borderStyle[k].v+'</option>');
+            }
             $('#tinymce-parent-of-wiki_page_body').append($c);
 
-            // Inject CSS to counteract Canvas styles
+            // Inject CSS to counteract Canvas styles, etc.
             $("<style>").prop("type", "text/css").html(
                 '.tm_Injection label { ' +
                 '  display:Unset; ' +
@@ -105,7 +136,13 @@
                 '} ' +
                 '.tm_Injection hr {' +
                 '  margin: 5px 0px;  border-color: #cccc66; '+
-                '}'
+                '} ' +
+                '.tm_Injection fieldset {' +
+                '  padding: 1em;  margin: 0.5em;  border: 1px Solid #cccc66; '+
+                '} '+
+                '.tm_Injection legend {' +
+                '  margin-bottom: 0px; border-bottom-width: 0px; width:Unset;'+
+                '} '
             ).appendTo("head");
 
             // Fix styles in Canvas <textarea>
@@ -136,26 +173,55 @@
                 },250);
             });
 
-            $('a#tm_ColumnAdd',$c).click(function(ev) {
+            const addToTextArea = function($o) {
+                const _f = function(txt,p,abortChr,successChr,inc) {
+                    while(true) {
+                        if(p<0 || p>=txt.length || txt.charAt(p)===successChr) {
+                            return true;
+                        } else if(txt.charAt(p)===abortChr) {
+                            return false;
+                        }
+                        p += inc;
+                    }
+                }
                 const textEdit = $('textarea#wiki_page_body').get(0);
                 if(textEdit.selectionStart === textEdit.selectionEnd) {
-                    // Build HTML
-                    const optK = $('#tm_ColumnNumber option:selected').attr('name');
-                    const opt = columnNumber[optK];
-                    const algK = $('#tm_ColumnAlign option:selected').attr('name');
-                    const alg = columnAlign[algK];
-                    let $o = $('<div class="grid-row '+alg.c+'"></div>');
-                    for(let i=0;i<opt.i;i++) {
-                        $o.append('<div class="'+opt.c+'"><div>Content goes here</div></div>');
-                    }
-                    // Add to text area
                     const caretPos = textEdit.selectionStart;
                     let t = $('textarea#wiki_page_body').val();
-                    t = t.substring(0,caretPos) + $o.get(0).outerHTML + t.substring(caretPos);
-                    $('textarea#wiki_page_body').val(t);
+                    if(_f(t,caretPos-1,'<','>',-1) && _f(t,caretPos,'>','<',+1)) {
+                        t = t.substring(0,caretPos) + $o.get(0).outerHTML + t.substring(caretPos);
+                        $('textarea#wiki_page_body').val(t);
+                    } else {
+                        alert('The cursor needs to be inside free text, not an HTML tag.');
+                    }
                 }
+            }
+
+            const getAttrValue = function(selector,data) {
+                const k = $(selector+' option:selected').attr('name');
+                return data[k];
+            }
+
+            // Add columns.
+            $('a#tm_ColumnAdd',$c).click(function(ev) {
+                // Build HTML
+                const opt = getAttrValue('#tm_ColumnNumber',columnNumber);
+                const alg = getAttrValue('#tm_ColumnAlign',columnAlign);
+                let $o = $('<div class="grid-row '+alg.c+'"></div>');
+                for(let i=0;i<opt.i;i++) {
+                    $o.append('<div class="'+opt.c+'"><div>Content goes here.</div></div>');
+                }
+                addToTextArea($o);
             });
 
+            // Add border box.
+            $('a#tm_BorderAdd',$c).click(function(ev) {
+                const opt = $('#tm_BorderStyle',borderStyle);
+                let $o = $('<div class="content-box pad-box-mini border '+opt.c+'"><div>Content goes here.</div></div>');
+                addToTextArea($o);
+            });
+
+            // Beautify HTML.
             $('a#tm_Beautify',$c).click(function(ev) {
                 beautify();
             });
